@@ -1,0 +1,31 @@
+name: publish react library
+
+on:
+  push:
+    branches: [
+      'release/react-ui'
+    ]
+
+jobs:
+  publish_react_library:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@patricksalmeida'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build library
+        run: npx nx build react-ui
+
+      - name: Publish library
+        run: npm publish dist/packages/react-ui
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
