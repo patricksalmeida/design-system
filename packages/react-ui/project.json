@@ -23,7 +23,8 @@
             "output": "."
           }
         ]
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

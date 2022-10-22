@@ -1,4 +1,4 @@
-import { ButtonProps } from "packages/core/src";
+import { ButtonProps } from "@design-system/core";
 
 export function Button({ label, isDisabled }: ButtonProps) {
   return (

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ButtonProps } from 'packages/core/src';
+import { ButtonProps } from '@design-system/core';
 
 @Component({
   selector: 'design-system-button',
