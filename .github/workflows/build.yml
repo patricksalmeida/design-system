@@ -3,7 +3,7 @@ name: build library
 on:
   pull_request:
     branches: [
-      'release/*'
+      'release/angular-ui'
     ]
 
 jobs:
@@ -21,6 +21,7 @@ jobs:
         run: npm install
 
       - name: Build library
-        run: npx nx affected --target=build
+        # run: npx nx affected --target=build
+        run: npx nx build angular-ui
 
 
