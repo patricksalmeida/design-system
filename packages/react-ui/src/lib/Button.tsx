@@ -1,5 +1,7 @@
-export function Button() {
+import { ButtonProps } from "packages/core/src";
+
+export function Button({ label, isDisabled }: ButtonProps) {
   return (
-    <button>react button works!</button>
+    <button disabled={isDisabled}>{label}</button>
   )
 }
