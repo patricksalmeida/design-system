@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@design-system/react-ui": ["packages/react-ui/src/index.ts"],
-      "@patricksalmeida/angular-ui": ["packages/angular-ui/src/index.ts"]
+      "@patricksalmeida/angular-ui": ["packages/angular-ui/src/index.ts"],
+      "@patricksalmeida/react-ui": ["packages/react-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
