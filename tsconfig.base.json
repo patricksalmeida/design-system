@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@patricksalmeida/angular-ui": ["packages/angular-ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
