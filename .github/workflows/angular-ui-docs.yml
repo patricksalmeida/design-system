@@ -7,7 +7,7 @@ on:
     ]
 
 jobs:
-  build_library:
+  publish_library:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,10 +19,10 @@ jobs:
         run: npm install
 
       - name: Build Storybook
-        run: nx build-storybook angular-ui
+        run: npx nx build-storybook angular-ui
 
       - name: Publish Storybook
-        run: nx run angular-ui:deploy-storybook -- --ci --existing-output-dir=dist/storybook/angular-ui --branch=release/angular-ui-docs
+        run: npx nx run angular-ui:deploy-storybook -- --ci --existing-output-dir=dist/storybook/angular-ui --branch=release/angular-ui-docs
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
 
