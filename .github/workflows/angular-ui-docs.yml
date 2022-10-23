@@ -1,0 +1,30 @@
+name: publish library docs
+
+on:
+  push:
+    branches: [
+      'release/angular-ui'
+    ]
+
+jobs:
+  build_library:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Storybook
+        run: nx build-storybook angular-ui
+
+      - name: Publish Storybook
+        run: nx run angular-ui:deploy-storybook -- --ci --existing-output-dir=dist/storybook/angular-ui --branch=release/angular-ui-docs
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+
+
+
